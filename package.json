@@ -1,0 +1,20 @@
+{
+  "name": "wildfire-monitor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.12",
+    "playwright": "^1.61.1",
+    "typescript": "^5.6.0",
+    "vite": "^7.0.0"
+  }
+}
