@@ -35,5 +35,6 @@ The Vite `base` is set to `/canada-wildfire-monitor/` in `vite.config.ts`; if yo
 
 ## Notes
 
+- Data refreshes every 10 minutes in an open tab (`REFRESH_MINUTES` in `src/config.ts`). On the same cycle the app compares its build id against the deployed `version.json` and shows a "Refresh" prompt when a newer version has been published — it never reloads on its own.
 - "Check my location" uses the browser's geolocation API entirely client-side; coordinates never leave the device.
 - This is an awareness tool, not an alerting service. Evacuation alerts and orders come from provincial/territorial authorities — links are in the in-app safety guide.

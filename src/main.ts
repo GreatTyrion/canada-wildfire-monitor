@@ -22,6 +22,7 @@ import {
 import { createStatusBar } from './ui/statusBar'
 import { createLayerPanel, createSmokeScrubber } from './ui/layerControl'
 import { createDrawer } from './ui/drawer'
+import { maybePromptForUpdate } from './ui/updateCheck'
 import { wireLocateButton } from './ui/locate'
 import { SAFETY_HTML, SAFETY_TITLE } from './ui/safety'
 
@@ -98,10 +99,15 @@ async function refresh(): Promise<void> {
   } else {
     statusBar.setError('Data sources')
   }
+
+  maybePromptForUpdate()
 }
 
 refresh()
 window.setInterval(refresh, REFRESH_MINUTES * 60_000)
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') maybePromptForUpdate()
+})
 
 // --- actions --------------------------------------------------------------
 wireLocateButton(document.getElementById('btn-locate') as HTMLButtonElement, {
