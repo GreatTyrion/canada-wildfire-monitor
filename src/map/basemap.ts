@@ -12,12 +12,15 @@ export function createMap(container: HTMLElement): L.Map {
   map.attributionControl.setPrefix(false)
   L.control.zoom({ position: 'bottomright' }).addTo(map)
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  // OSM standard tiles: keyless. CARTO's basemaps began requiring an API key
+  // (watermarked tiles otherwise) in late 2026. Muted via .basemap-tiles in CSS
+  // so the overlay palettes still read as they did over a light grey basemap.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 18,
     zIndex: 1,
+    className: 'basemap-tiles',
   }).addTo(map)
 
   return map

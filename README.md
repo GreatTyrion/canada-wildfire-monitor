@@ -12,7 +12,7 @@ A lightweight, fully static web map of Canadian wildfire activity for people aff
 | Satellite hotspots (24 h) & M3 perimeter estimates | [CWFIS GeoServer](https://cwfis.cfs.nrcan.gc.ca/geoserver/public/wms) WMS |
 | Smoke forecast (wildfire PM2.5) | [ECCC GeoMet](https://eccc-msc.github.io/open-data/) WMS, RAQDPS-FireWork |
 | AQHI observations & weather alerts | [MSC GeoMet OGC API](https://api.weather.gc.ca) |
-| Basemap | CARTO Positron / © OpenStreetMap contributors |
+| Basemap | [OpenStreetMap](https://www.openstreetmap.org/copyright) standard tiles (keyless, greyscaled in CSS) / © OpenStreetMap contributors |
 
 CWFIS is migrating layers from its legacy GeoServer to CWFIF; all endpoints live in `src/config.ts` if a URL needs updating.
 

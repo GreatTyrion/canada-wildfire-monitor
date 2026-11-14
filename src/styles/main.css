@@ -707,6 +707,12 @@ body {
 
 /* --- leaflet chrome tweaks ------------------------------------------------ */
 
+/* Mute the colourful OSM basemap to a light grey so data layers stand out. */
+.basemap-tiles {
+  filter: grayscale(1) contrast(0.82) brightness(1.1);
+}
+
+
 .leaflet-bar a {
   background: var(--ink);
   color: var(--text);
